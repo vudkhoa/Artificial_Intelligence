@@ -155,7 +155,7 @@ def a_star(problem):
                 came_from[neighbor] = current
 
     return None
-    
+
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -231,20 +231,20 @@ class App(tk.Tk):
             except ValueError as e:
                 messagebox.showerror('Error', str(e))
 
-            # Astar code tay.
-            try:
-                problem = MazeSolver(MAP)
-                path = a_star(problem)
-                if path is None:
-                    messagebox.showwarning('Kết quả', 'Không tìm thấy đường đi từ điểm bắt đầu đến điểm đích.')
-                else:
-                    for (px, py) in path:
-                        self.cvs_me_cung.create_rectangle(px*W+2, py*W+2, (px+1)*W-2, (py+1)*W-2, outline = '#1E90FF', fill = '#ADD8E6')
-                        time.sleep(0.05)
-                        self.cvs_me_cung.update()
-                    messagebox.showinfo('Result', 'Đã tìm thấy đường đi bằng code tự xây!')
-            except ValueError as e:
-                messagebox.showerror('Error', str(e))
+            # # Astar code tay.
+            # try:
+            #     problem = MazeSolver(MAP)
+            #     path = a_star(problem)
+            #     if path is None:
+            #         messagebox.showwarning('Kết quả', 'Không tìm thấy đường đi từ điểm bắt đầu đến điểm đích.')
+            #     else:
+            #         for (px, py) in path:
+            #             self.cvs_me_cung.create_rectangle(px*W+2, py*W+2, (px+1)*W-2, (py+1)*W-2, outline = '#1E90FF', fill = '#ADD8E6')
+            #             time.sleep(0.05)
+            #             self.cvs_me_cung.update()
+            #         messagebox.showinfo('Result', 'Đã tìm thấy đường đi bằng code tự xây!')
+            # except ValueError as e:
+            #     messagebox.showerror('Error', str(e))
 
             except Exception as e:
                 messagebox.showerror('Error', f"Lỗi không xác định: {e}")
